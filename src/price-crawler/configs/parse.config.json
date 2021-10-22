@@ -1,0 +1,70 @@
+{
+  "storesTarget": [
+    {
+      "storeName": "Kabum!",
+      "storeId": "kabum",
+      "site": "https://www.kabum.com.br",
+      "logo": "",
+      "crawlerSpecs": [
+        {
+          "elementName": "price",
+          "contextSelector": "section[itemscope]",
+          "targetSelector": "h4[itemprop=price]",
+          "targetAttribute": {
+            "type": "text"
+          }
+        },
+        {
+          "elementName": "nome",
+          "contextSelector": "section[itemscope]",
+          "targetSelector": "h1[itemprop=name]",
+          "targetAttribute": {
+            "type": "text"
+          }
+        },
+        {
+          "elementName": "foto",
+          "contextSelector": ".selectedImage",
+          "targetSelector": "figure img",
+          "targetAttribute": {
+            "type": "attr",
+            "attribute": "src"
+          }
+        }
+      ]
+    },
+        {
+      "storeName": "Magazine Luiza",
+      "storeId": "magalu",
+      "site": "https://www.magazineluiza.com.br/",
+      "logo": "",
+      "crawlerSpecs": [
+        {
+          "elementName": "price",
+          "contextSelector": ".price-template-price-block",
+          "targetSelector": ".price-template__text",
+          "targetAttribute": {
+            "type": "text"
+          }
+        },
+        {
+          "elementName": "nome",
+          "contextSelector": ".wrapper__control",
+          "targetSelector": ".header-product__title",
+          "targetAttribute": {
+            "type": "text"
+          }
+        },
+        {
+          "elementName": "foto",
+          "contextSelector": ".showcase-product__container-img",
+          "targetSelector": "a img",
+          "targetAttribute": {
+            "type": "attr",
+            "attribute": "src"
+          }
+        }
+      ]
+    }
+  ]
+}
