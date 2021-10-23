@@ -14,7 +14,7 @@ import { PriceCrawlerModule } from './price-crawler/price-crawler.module';
       envFilePath: ['.env', '.env.development'],
     }),
     ScheduleModule.forRoot(),
-    MongooseModule.forRoot(`mongodb://${process.env.DATABASE_HOST}/pricetracker`)
+    MongooseModule.forRoot(process.env.DATABASE_CONNECT)
   ],
   controllers: [AppController],
   providers: [AppService],

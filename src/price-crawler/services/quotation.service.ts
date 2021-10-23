@@ -46,9 +46,8 @@ export class QuotationService {
     return new Promise((res, rej) => res(true))
   }
 
-  @Cron(CronExpression.EVERY_5_MINUTES)
+  //@Cron(CronExpression.EVERY_3_HOURS)
   async triggerCronProductQuotations(): Promise<any>{
-    this.logger.debug('Product quotations had started...')
     return await this.productQuotations();
   }
 
