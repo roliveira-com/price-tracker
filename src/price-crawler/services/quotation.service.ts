@@ -46,7 +46,7 @@ export class QuotationService {
     return new Promise((res, rej) => res(true))
   }
 
-  //@Cron(CronExpression.EVERY_3_HOURS)
+  @Cron(CronExpression.EVERY_6_HOURS)
   async triggerCronProductQuotations(): Promise<any>{
     return await this.productQuotations();
   }
