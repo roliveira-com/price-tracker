@@ -11,6 +11,7 @@ import { PriceCrawlerModule } from './price-crawler/price-crawler.module';
     PriceCrawlerModule,
     ConfigModule.forRoot({
       isGlobal: true,
+      ignoreEnvFile: true,
       envFilePath: ['.env', '.env.development'],
     }),
     ScheduleModule.forRoot(),
