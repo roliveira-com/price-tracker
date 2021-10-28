@@ -1,0 +1,13 @@
+{{> navbar}}
+
+<section>
+  <div class="people_list">
+    {{#each list}}
+    <p>{{this.produto.nome}}</p>
+    <p>{{this.price}}</p>
+    {{/each}}
+    <hr>
+  </div>
+</section>
+
+<script src="/js/main.js"></script>

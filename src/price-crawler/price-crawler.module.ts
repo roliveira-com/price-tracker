@@ -12,6 +12,7 @@ import { ApiController } from './controllers/api.controller';
 import { ProductService } from './services/product.service';
 import { TrackingService } from './services/tracking.service';
 import { QuotationService } from './services/quotation.service';
+import { PagesController } from './controllers/pages.controller';
 
 @Module({
   imports: [
@@ -23,6 +24,6 @@ import { QuotationService } from './services/quotation.service';
     ])
   ],
   providers: [PageLoadService, PageParseService, UserService, ProductService, TrackingService, QuotationService],
-  controllers: [PriceCrawlerController, ApiController]
+  controllers: [PriceCrawlerController, ApiController, PagesController]
 })
 export class PriceCrawlerModule { }

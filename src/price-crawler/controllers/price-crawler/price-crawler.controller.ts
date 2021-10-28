@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Body, HttpException, HttpStatus } from '@nestjs/common';
+import { Controller, Get, Post, Body, HttpException, HttpStatus, Render } from '@nestjs/common';
 import { ISelectedStore } from '../../interface/store.interface';
 import { PageParseService } from '../../services/page-parse/page-parse.service';
 import { PageLoadService } from '../../services/page-load/page-load.service';

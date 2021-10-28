@@ -1,0 +1,34 @@
+.card {
+  width: 250px;
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.message-date {
+  display: inline-block;
+  margin-bottom: 1em;
+  font-size: .8em;
+  text-align: right;
+}
+
+.login-form__container {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  height: calc(100vh - 52px);
+  padding: 0 10em;
+}
+
+.login-title {
+  color: #3298dc;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.login-highline {
+  margin: .5em 0 1em;
+}
+
+.login-logo {
+  width: 5em;
+}
