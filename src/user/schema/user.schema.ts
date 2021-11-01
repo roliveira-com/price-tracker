@@ -1,18 +1,24 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
-import { Document, SchemaTimestampsConfig } from 'mongoose';
+import { Exclude } from 'class-transformer';
+import { Document, ObjectId, SchemaTypes } from 'mongoose';
 
 export type UserDocument = User & Document;
 
 @Schema()
 export class User {
-  @Prop()
-  conta: string;
 
   @Prop()
   nome: string;
 
   @Prop()
   email: string;
+
+  @Prop()
+  telefone?: string;
+
+  @Exclude()
+  @Prop()
+  senha?: string;
 
 }
 

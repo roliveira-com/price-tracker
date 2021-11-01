@@ -6,7 +6,6 @@ import { PageParseService } from '../services/page-parse/page-parse.service';
 import { ProductService } from '../services/product.service';
 import { QuotationService } from '../services/quotation.service';
 import { TrackingService } from '../services/tracking.service';
-import { UserService } from '../services/user.service';
 
 @Controller('api')
 export class ApiController {
@@ -15,19 +14,8 @@ export class ApiController {
     private readonly productService: ProductService,
     private readonly trackingService: TrackingService,
     private readonly quotationService: QuotationService,
-    private readonly userService: UserService,
     private readonly parserService: PageParseService
   ){}
-
-  @Get("user")
-  async getUser(@Query() user) {
-    return this.userService.find(user)
-  }
-
-  @Post("user")
-  async createUser(@Body() user) {
-    return this.userService.create(user)
-  }
 
   @Get('product')
   async listProduct() {

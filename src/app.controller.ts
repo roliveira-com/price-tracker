@@ -1,4 +1,5 @@
-import { Controller, Get, Render } from '@nestjs/common';
+import { Controller, Get, Render, Redirect } from '@nestjs/common';
+
 import { AppService } from './app.service';
 
 @Controller()
@@ -8,8 +9,12 @@ export class AppController {
   ) {}
 
   @Get()
-  @Render('pages/login')
-  getIndex() {
-    return this.appService.resolveEntryContent();
-  }
+  @Redirect('/login', 301)
+  getIndex() {}
+
+  // @Get('login')
+  // @Render('pages/login')
+  // getLogin() {
+  //   return this.appService.resolveEntryContent();
+  // }
 }

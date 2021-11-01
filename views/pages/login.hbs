@@ -6,20 +6,46 @@
       <img class="login-logo" src="/images/price-tag_512px.png" alt="Logo em forma de etiqueta de preços">
       <h1 class="login-title">Price Looker <span class="tag is-warning">beta</span></h1>
       <h3 class="login-highline">A melhor maneira de acompanhar os preços dos seus dos produtos que você mais deseja.</h3>
-      <form action="">
+      
+      {{#if error}}
+      <div class="notification is-danger">
+        <button class="delete"></button>
+        <strong>Erro: {{status}}</strong> - {{message}}
+      </div>
+      
+      {{/if}}
+      <form action="/login" method="post">
         <div class="field is-grouped">
           <p class="control is-expanded">
-            <input class="input is-medium" type="text" placeholder="Email">
+            <input class="input is-medium" type="text" name="email" placeholder="Email">
+            <input type="hidden" name="password" value="none">
+            {{!-- <input  type="hidden" name="_csrf" value="{{csrfToken}}"> --}}
           </p>
           <p class="control">
-            <a class="button is-medium is-info">
+            <button type="submit" class="button is-medium is-info">
               Login
-            </a>
+            </button>
           </p>
         </div>
       </form>
       <hr>
       <button class="button is-info is-outlined is-fullwidth">Cadastro</button>
+      <hr>
+      <form action="/register" method="post">
+        <div class="field is-grouped">
+          <p class="control is-expanded">
+            <input class="input is-medium" type="text" name="nome" placeholder="Nome">
+            <input class="input is-medium" type="text" name="email" placeholder="Email">
+            <input type="hidden" name="password" value="none">
+            {{!-- <input type="hidden" name="_csrf" value="{{csrfToken}}"> --}}
+          </p>
+          <p class="control">
+            <button type="submit" class="button is-medium is-info">
+              Registar
+            </button>
+          </p>
+        </div>
+      </form>
     </div>
   </div>
   <div class="column">

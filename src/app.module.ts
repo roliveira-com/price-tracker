@@ -5,6 +5,8 @@ import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { PriceCrawlerModule } from './price-crawler/price-crawler.module';
+import { UserModule } from './user/user.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,7 +17,9 @@ import { PriceCrawlerModule } from './price-crawler/price-crawler.module';
       envFilePath: ['.env', '.env.development'],
     }),
     ScheduleModule.forRoot(),
-    MongooseModule.forRoot(process.env.DATABASE_CONNECT)
+    MongooseModule.forRoot(process.env.DATABASE_CONNECT),
+    UserModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
